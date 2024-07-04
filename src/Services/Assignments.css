@@ -1,0 +1,77 @@
+.assignments-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .assignments-title {
+    font-size: 2em;
+    color: #0a6684;
+    margin-bottom: 10px;
+  }
+  
+  .assignments-subtitle {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .assignments-subtitle a {
+    color: #ff502f;
+    text-decoration: none;
+  }
+  
+  .assignments-subtitle a:hover {
+    text-decoration: underline;
+  }
+  
+  .assignments-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .assignment-category {
+    flex: 1 1 300px;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  
+  .icon {
+    font-size: 2em;
+    color: #0a6684;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 1em;
+    color: #0a6684;
+    margin-bottom: 5px;
+  }
+  
+  @media (max-width: 600px) {
+    .assignments-grid {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .assignment-category {
+      max-width: 100%;
+    }
+  }
+  

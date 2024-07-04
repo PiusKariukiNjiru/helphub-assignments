@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.why-choose-us-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f6f9fe;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.why-choose-button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #0a6684;
+}
+
+.why-choose-us-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.reasons-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.reason-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.2s;
+    border-top: 2px solid #260db1;
+}
+
+.reason-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.reason-card p {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .reasons-container {
+        justify-content: center;
+    }
+
+    .reason-card {
+        width: calc(50% - 20px);
+    }
+
+    .why-choose-us-container h1 {
+        font-size: 26px;
+    }
+
+    .reason-card h2 {
+        font-size: 18px;
+    }
+
+    .reason-card p {
+        font-size: 15px;
+    }
+
+    .why-choose-button {
+        font-size: 1.1em;
+        padding: 10px 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reasons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reason-card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .why-choose-us-container h1 {
+        font-size: 24px;
+    }
+
+    .reason-card h2 {
+        font-size: 18px;
+    }
+
+    .reason-card p {
+        font-size: 14px;
+    }
+
+    .why-choose-button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-choose-us-container {
+        padding: 20px 10px;
+    }
+
+    .reason-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .why-choose-us-container h1 {
+        font-size: 22px;
+    }
+
+    .reason-card h2 {
+        font-size: 16px;
+    }
+
+    .reason-card p {
+        font-size: 14px;
+    }
+
+    .why-choose-button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}

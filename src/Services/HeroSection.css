@@ -1,0 +1,55 @@
+.heroo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* 1/3 of the screen height */
+    background-image: url('servicee.jpg'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heroo-content {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .heroo-subtitle {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .heroo-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 0 0;
+  }
+  
+  @media (max-width: 768px) {
+    .heroo-section {
+      height: 50vh; /* Adjust for smaller screens if needed */
+    }
+  
+    .heroo-title {
+      font-size: 2em;
+    }
+  
+    .heroo-subtitle {
+      font-size: 0.9em;
+    }
+  }
+  

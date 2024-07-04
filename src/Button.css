@@ -1,0 +1,15 @@
+
+.button {
+    background-image: linear-gradient(to right, #0a6684, #5b8360);
+    color: var(--button-text-color);
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: var(--primary-color-dark);
+  }

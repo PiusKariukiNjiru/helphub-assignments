@@ -1,0 +1,102 @@
+.assignment-empire {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-top: 50px;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2em;
+}
+
+.assignment-empire-heading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.assignment-empire-heading h2{
+  margin: 0;
+    font-size: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #0a6684;  
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.service.reverse {
+  flex-direction: column-reverse;
+}
+
+.service-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Add margin to the bottom of the image */
+}
+
+.service-content {
+  width: 100%;
+  max-width: 600px;
+}
+
+.service-content h2 {
+  margin-top: 0;
+  color: #071728;
+}
+
+.service-content p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+  .service {
+    flex-direction: row;
+  }
+
+  .service.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-image {
+    width: 40%;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .service.reverse .service-image {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+
+  .service-content {
+    width: 60%;
+  }
+}
+
+/* Extra margin for small devices */
+@media (max-width: 767px) {
+  .order-button {
+    margin-bottom: 30px; /* Add extra margin to the top of the button */
+  }
+}
+
+
