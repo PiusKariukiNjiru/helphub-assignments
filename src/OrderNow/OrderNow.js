@@ -127,7 +127,7 @@ function OrderNow() {
     });
 
     try {
-      const response = await fetch('192.168.100.31:3001/submit-order', {
+      const response = await fetch('/submit-order', {
         method: 'POST',
         body: formData
       });
