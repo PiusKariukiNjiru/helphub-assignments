@@ -37,6 +37,9 @@ const ExcellentServices = () => {
     const serviceRefs = useRef([]);
 
     useEffect(() => {
+      const sectionRefCurrent = sectionRef.current;
+      const serviceRefsCurrent = serviceRefs.current;
+    
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -47,25 +50,26 @@ const ExcellentServices = () => {
       }, {
         threshold: 0.1
       });
-
-      if (sectionRef.current) {
-        observer.observe(sectionRef.current);
+    
+      if (sectionRefCurrent) {
+        observer.observe(sectionRefCurrent);
       }
-
-      serviceRefs.current.forEach(ref => {
+    
+      serviceRefsCurrent.forEach(ref => {
         if (ref) observer.observe(ref);
       });
-
+    
       return () => {
-        if (sectionRef.current) {
-          observer.unobserve(sectionRef.current);
+        if (sectionRefCurrent) {
+          observer.unobserve(sectionRefCurrent);
         }
-
-        serviceRefs.current.forEach(ref => {
+    
+        serviceRefsCurrent.forEach(ref => {
           if (ref) observer.unobserve(ref);
         });
       };
     }, []);
+    
 
     const handleReadMore = () => {
       navigate('/services', { replace: true });

@@ -10,6 +10,10 @@ function FeaturesAndAbout() {
   const aboutRef = useRef(null);
 
   useEffect(() => {
+    const sectionRefCurrent = sectionRef.current;
+    const featuresRefCurrent = featuresRef.current;
+    const aboutRefCurrent = aboutRef.current;
+  
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -20,33 +24,34 @@ function FeaturesAndAbout() {
     }, {
       threshold: 0.1
     });
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  
+    if (sectionRefCurrent) {
+      observer.observe(sectionRefCurrent);
     }
-
-    if (featuresRef.current) {
-      observer.observe(featuresRef.current);
+  
+    if (featuresRefCurrent) {
+      observer.observe(featuresRefCurrent);
     }
-
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
+  
+    if (aboutRefCurrent) {
+      observer.observe(aboutRefCurrent);
     }
-
+  
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (sectionRefCurrent) {
+        observer.unobserve(sectionRefCurrent);
       }
-
-      if (featuresRef.current) {
-        observer.unobserve(featuresRef.current);
+  
+      if (featuresRefCurrent) {
+        observer.unobserve(featuresRefCurrent);
       }
-
-      if (aboutRef.current) {
-        observer.unobserve(aboutRef.current);
+  
+      if (aboutRefCurrent) {
+        observer.unobserve(aboutRefCurrent);
       }
     };
   }, []);
+  
 
   return (
     <div className="features-and-about" ref={sectionRef}>
