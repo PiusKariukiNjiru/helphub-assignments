@@ -95,6 +95,7 @@ const formatContactUsDetailsToHTML = (contactDetails) => {
 
 // API Route to handle contact form submission
 app.post('/send-message', (req, res) => {
+  console.log('Received contact form submission:', req.body);
   const { fullName, email, phone, message } = req.body;
 
   const mailOptions = {
@@ -103,6 +104,8 @@ app.post('/send-message', (req, res) => {
     subject: 'New Contact Us Message',
     html: formatContactUsDetailsToHTML({ fullName, email, phone, message })
   };
+
+  console.log('Attempting to send email with options:', mailOptions);
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {

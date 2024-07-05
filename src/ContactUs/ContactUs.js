@@ -28,7 +28,7 @@ const ContactUs = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('192.168.100.31:3001/send-message', {
+      const response = await fetch('/send-message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
