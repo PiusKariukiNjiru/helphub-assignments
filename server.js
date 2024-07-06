@@ -1,130 +1,77 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
-const cors = require('cors');
 const path = require('path');
+const nodemailer = require('nodemailer');
 const multer = require('multer');
-const bodyParser = require('body-parser');
-require('dotenv').config();
-
+const fs = require('fs');
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'build')));
+const PORT = process.env.PORT || 3001;
+const upload = multer({ dest: 'uploads/' });
 
-// Multer setup for file uploads
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
+// Middleware to parse JSON
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Nodemailer transporter setup
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+// Serve the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Helper function to format order details into HTML
-const formatOrderDetailsToHTML = (orderDetails) => {
-  const files = orderDetails.files && orderDetails.files.length > 0 ? orderDetails.files.join(', ') : 'No files attached';
-  return `
-    <h1>New Order Received</h1>
-    <p><strong>Email:</strong> ${orderDetails.email}</p>
-    <p><strong>Order Type:</strong> ${orderDetails.orderType}</p>
-    <p><strong>Deadline Date:</strong> ${orderDetails.deadlineDate}</p>
-    <p><strong>Deadline Time:</strong> ${orderDetails.deadlineTime}</p>
-    <p><strong>Pages:</strong> ${orderDetails.pages}</p>
-    <p><strong>Cited Resources:</strong> ${orderDetails.citedResources}</p>
-    <p><strong>Formatting Style:</strong> ${orderDetails.formattingStyle}</p>
-    <p><strong>Subject:</strong> ${orderDetails.subject}</p>
-    <p><strong>Topic:</strong> ${orderDetails.topic}</p>
-    <p><strong>Detailed Instructions:</strong> ${orderDetails.detailedInstructions}</p>
-    <p><strong>Attached Files:</strong> ${files}</p>
-  `;
-};
-
-// API Route to handle order form submission
 app.post('/submit-order', upload.array('files'), (req, res) => {
-  try {
-    console.log('Order details received:', req.body.orderDetails);
-    const orderDetails = JSON.parse(req.body.orderDetails);
-    const files = req.files;
+  const { email, orderType, deadlineDate, deadlineTime, pages, citedResources, formattingStyle, subject, topic, detailedInstructions } = JSON.parse(req.body.orderDetails);
+  const files = req.files;
 
-    console.log('Files received:', files);
+  console.log('Order details received:', req.body.orderDetails);
+  console.log('Files received:', files);
 
-    const attachments = files.map(file => ({
-      filename: file.originalname,
-      content: file.buffer
-    }));
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: 'New Order Received',
-      html: formatOrderDetailsToHTML(orderDetails),
-      attachments: attachments
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Error sending email:', error);
-        res.status(500).send('Error sending email');
-      } else {
-        console.log('Email sent:', info.response);
-        res.status(200).send('Order submitted successfully');
-      }
-    });
-  } catch (err) {
-    console.error('Error processing order:', err);
-    res.status(500).send('Error processing order');
-  }
-});
-
-// Helper function to format contact us details into HTML
-const formatContactUsDetailsToHTML = (contactDetails) => {
-  return `
-    <h1>Contact Us Message</h1>
-    <p><strong>Full Name:</strong> ${contactDetails.fullName}</p>
-    <p><strong>Email:</strong> ${contactDetails.email}</p>
-    <p><strong>Phone:</strong> ${contactDetails.phone}</p>
-    <p><strong>Message:</strong> ${contactDetails.message}</p>
-  `;
-};
-
-// API Route to handle contact form submission
-app.post('/send-message', (req, res) => {
-  console.log('Received contact form submission:', req.body);
-  const { fullName, email, phone, message } = req.body;
+  const attachments = files.map(file => ({
+    filename: file.originalname,
+    path: file.path
+  }));
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
-    subject: 'New Contact Us Message',
-    html: formatContactUsDetailsToHTML({ fullName, email, phone, message })
+    subject: 'New Order Submission',
+    html: `
+      <h1>Order Details</h1>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Order Type:</strong> ${orderType}</p>
+      <p><strong>Deadline Date:</strong> ${deadlineDate}</p>
+      <p><strong>Deadline Time:</strong> ${deadlineTime}</p>
+      <p><strong>Pages:</strong> ${pages}</p>
+      <p><strong>Cited Resources:</strong> ${citedResources}</p>
+      <p><strong>Formatting Style:</strong> ${formattingStyle}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Topic:</strong> ${topic}</p>
+      <p><strong>Detailed Instructions:</strong> ${detailedInstructions}</p>
+    `,
+    attachments: attachments
   };
-
-  console.log('Attempting to send email with options:', mailOptions);
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error('Error sending email:', error);
-      res.status(500).send('Error sending email');
+      return res.status(500).send('Error submitting order. Please try again.');
     } else {
       console.log('Email sent:', info.response);
-      res.status(200).send('Message sent successfully');
+      files.forEach(file => fs.unlinkSync(file.path)); // Delete files after sending
+      return res.status(200).send('Order submitted successfully!');
     }
   });
 });
 
-// Catch-all handler for any requests that don't match the ones above
+// Catch-all handler for any other requests
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

@@ -43,7 +43,7 @@ function OrderNow() {
   const [detailedInstructions, setDetailedInstructions] = useState("");
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
-  const [email, setEmail] = useState(""); //new state for email
+  const [email, setEmail] = useState(""); // new state for email
   const [error, setError] = useState("");
   const [daysLeft, setDaysLeft] = useState(0);
   const [submissionStatus, setSubmissionStatus] = useState("");
@@ -104,12 +104,13 @@ function OrderNow() {
   };
 
   const handleSubmit = async () => {
-    if (topic === "" || detailedInstructions === "") {
+    if (topic === "" || detailedInstructions === "" || email === "") {
       setSubmissionStatus("Please fill out all required fields.");
       return;
     }
 
     const orderDetails = {
+      email, // include email in orderDetails
       orderType,
       deadlineDate,
       deadlineTime,
@@ -159,12 +160,12 @@ function OrderNow() {
             type="email" 
             placeholder="Your email" 
             value={email} 
-            onChange={(e) => setEmail(e.target.value)} required
+            onChange={(e) => setEmail(e.target.value)} 
+            required
           />
         </div>
         <div className="form-group">
           <label>Order Type</label>
-          
           <div>
             <button 
               className={`order-type-btn ${orderType === "Writing" ? "active" : ""}`} 
@@ -235,7 +236,6 @@ function OrderNow() {
             onChange={(e) => setDetailedInstructions(e.target.value)}
           />
         </div>
-        
         <div className="form-group">
           <input 
             type="file" 
