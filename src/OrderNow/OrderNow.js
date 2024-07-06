@@ -43,6 +43,7 @@ function OrderNow() {
   const [detailedInstructions, setDetailedInstructions] = useState("");
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
+  const [email, setEmail] = useState(""); //new state for email
   const [error, setError] = useState("");
   const [daysLeft, setDaysLeft] = useState(0);
   const [submissionStatus, setSubmissionStatus] = useState("");
@@ -234,6 +235,7 @@ function OrderNow() {
             onChange={(e) => setDetailedInstructions(e.target.value)}
           />
         </div>
+        
         <div className="form-group">
           <input 
             type="file" 
