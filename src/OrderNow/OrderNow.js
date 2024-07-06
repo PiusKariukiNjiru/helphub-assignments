@@ -41,7 +41,6 @@ function OrderNow() {
   const [subject, setSubject] = useState(subjects[0]);
   const [topic, setTopic] = useState("");
   const [detailedInstructions, setDetailedInstructions] = useState("");
-  const [email, setEmail] = useState(""); // New state for email
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
@@ -100,12 +99,11 @@ function OrderNow() {
     setSubject(subjects[0]);
     setTopic("");
     setDetailedInstructions("");
-    setEmail(""); // Reset email
     clearFiles();
   };
 
   const handleSubmit = async () => {
-    if (topic === "" || detailedInstructions === "" || email === "") { // Include email check
+    if (topic === "" || detailedInstructions === "") {
       setSubmissionStatus("Please fill out all required fields.");
       return;
     }
@@ -119,8 +117,7 @@ function OrderNow() {
       formattingStyle,
       subject,
       topic,
-      detailedInstructions,
-      email // Include email in order details
+      detailedInstructions
     };
 
     const formData = new FormData();
@@ -156,7 +153,17 @@ function OrderNow() {
       <div className="order-now-container">
         <h2>Order Now</h2>
         <div className="form-group">
+          <label>Email</label>
+          <input 
+            type="email" 
+            placeholder="Your email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} required
+          />
+        </div>
+        <div className="form-group">
           <label>Order Type</label>
+          
           <div>
             <button 
               className={`order-type-btn ${orderType === "Writing" ? "active" : ""}`} 
@@ -225,15 +232,6 @@ function OrderNow() {
             placeholder="List your instructions or upload the files for the order." 
             value={detailedInstructions} 
             onChange={(e) => setDetailedInstructions(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Email</label>
-          <input 
-            type="email" 
-            placeholder="Your email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
           />
         </div>
         <div className="form-group">
