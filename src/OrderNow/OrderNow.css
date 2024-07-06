@@ -1,163 +1,163 @@
 .order-now-container {
-    width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.order-now-container h2 {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-now-container h2 {
     text-align: center;
-    font-size: 30px;
-    color: #0a6684;
-
-}
-
-.form-group {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
     margin-bottom: 15px;
-}
-
-.form-group label {
+  }
+  
+  .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-}
-
-.order-type-btn {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: 1px solid #0a6684;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #0a6684;
-    cursor: pointer;
-}
-
-.order-type-btn.active {
-    background-color: #0a6684;
-    color: #fff;
-}
-
-.pages-input, .cited-resources-input {
-    display: flex;
-    align-items: center;
-}
-
-.pages-input button, .cited-resources-input button {
-    padding: 5px 10px;
-    border: 1px solid #0a6684;
-    border-radius: 4px;
-    background-color: #0a6684;
-    color: #fff;
-    cursor: pointer;
-}
-
-.pages-input input, .cited-resources-input input {
-    width: 50px;
-    text-align: center;
-    margin: 0 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-input[type="date"], input[type="time"], select, input[type="text"], textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-textarea {
-    height: 80px;
-    resize: none;
-}
-
-.attach-files-btn {
-    display: block;
+    color: #555;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="date"],
+  .form-group input[type="time"],
+  .form-group input[type="number"],
+  .form-group textarea,
+  .form-group select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #0a6684;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #0a6684;
-    color: #fff;
-    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .form-group input[type="file"] {
+    display: none;
+  }
+  
+  .attach-files-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
     cursor: pointer;
-}
-
-.file-list {
+    text-align: center;
+  }
+  
+  .attach-files-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .pages-input,
+  .cited-resources-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pages-input button,
+  .cited-resources-input button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .pages-input button:hover,
+  .cited-resources-input button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .pages-input input,
+  .cited-resources-input input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0 5px;
+  }
+  
+  .file-list {
     margin-top: 10px;
-}
-
-.file-list ul {
+  }
+  
+  .file-list ul {
     list-style-type: none;
     padding: 0;
-}
-
-.file-list li {
+  }
+  
+  .file-list ul li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .file-list ul li button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .file-list ul li button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .file-summary {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.file-list li button {
-    background-color: #ff4d4d;
+  }
+  
+  .submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 4px;
-    color: #fff;
     cursor: pointer;
-    padding: 2px 8px;
-}
-
-.file-summary {
+    text-align: center;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
     margin-top: 10px;
-}
-
-.spinner {
+  }
+  
+  .spinner {
+    margin: 10px 0;
     border: 4px solid #f3f3f3;
     border-top: 4px solid #007bff;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    animation: spin 1s linear infinite;
-    margin-top: 10px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.error {
-    color: #ff4d4d;
-    margin-top: 10px;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #0a6684;
-    color: #fff;
-    cursor: pointer;
-}
-
-.submission-status {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #007bff;
-}
-
-@media (max-width: 600px) {
-    .order-now-container {
-        padding: 10px;
-        width: 90%;
-        margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-}
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .submission-status {
+    margin-top: 10px;
+    color: green;
+  }
+  

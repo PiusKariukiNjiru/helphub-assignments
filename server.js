@@ -32,6 +32,7 @@ const formatOrderDetailsToHTML = (orderDetails) => {
   const files = orderDetails.files && orderDetails.files.length > 0 ? orderDetails.files.join(', ') : 'No files attached';
   return `
     <h1>New Order Received</h1>
+    <p><strong>Email:</strong> ${orderDetails.email}</p>
     <p><strong>Order Type:</strong> ${orderDetails.orderType}</p>
     <p><strong>Deadline Date:</strong> ${orderDetails.deadlineDate}</p>
     <p><strong>Deadline Time:</strong> ${orderDetails.deadlineTime}</p>
