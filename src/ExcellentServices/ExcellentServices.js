@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faFileAlt, faBook, faPen } from '@fortawesome/free-solid-svg-icons';
-import Button from './Button';
+import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
 import './ExcellentServices.css';
 

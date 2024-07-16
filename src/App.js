@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import './App.css';
-import Header from './Header';
-import Home from './Home';
-import FreeServicesMain from './FreeServicesMain';
+import Header from './Header/Header';
+import Home from './Home/Home';
+import FreeServicesMain from './OurFreeServices/FreeServicesMain';
 import ServicesMain from './Services/ServicesMain';
 import AboutUsMain from './About-Us/AboutUsMain';
 import ContactUs from './ContactUs/ContactUs'

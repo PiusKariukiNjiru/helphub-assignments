@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from './Button';
+import Button from '../Button/Button';
 import './ProfessionalExperts.css';
 
 function ProfessionalExperts() {
@@ -46,7 +46,7 @@ function ProfessionalExperts() {
         </p>
       </div>
       <Button onClick={handleOrderNow}>
-        Hire an Expert
+        Read More
       </Button>
     </section>
   );

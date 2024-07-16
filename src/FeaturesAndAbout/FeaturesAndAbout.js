@@ -1,13 +1,16 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './FeaturesAndAbout.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays, faHandshake, faBookOpenReader, faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons';
-import Button from './Button';
+import Button from '../Button/Button';
 
 function FeaturesAndAbout() {
   const sectionRef = useRef(null);
   const featuresRef = useRef(null);
   const aboutRef = useRef(null);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const sectionRefCurrent = sectionRef.current;
@@ -53,6 +56,10 @@ function FeaturesAndAbout() {
   }, []);
   
 
+  const handleAboutUs = () => {
+    navigate('/about');
+  };
+
   return (
     <div className="features-and-about" ref={sectionRef}>
       <div className="features-container" ref={featuresRef}>
@@ -86,8 +93,8 @@ function FeaturesAndAbout() {
         <h1>Welcome to HelpHub Assignments</h1>
         <h3>Your Trusted Global Assignment Writing Service</h3>
         <p>At HelpHub Assignments, we have been revolutionizing the world of academic writing since 2016. With our unmatched expertise and commitment to excellence, we have become a leading provider of comprehensive assignment solutions. From management to healthcare, finance to technical subjects, our dedicated team of professionals covers a wide range of disciplines, ensuring that we meet the diverse needs of our clients. Get the best assignment help for students in Australia, Germany, USA, and the UK at affordable prices.</p>
-        <Button onClick={() => console.log('Hire an Expert clicked')}>
-          Read more
+        <Button onClick={handleAboutUs}>
+          Read More
         </Button>
       </div>
     </div>

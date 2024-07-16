@@ -113,7 +113,7 @@ app.post('/submit-hero-form', upload.single('file'), (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: 'New Hero Form Submission',
+      subject: 'New Hero Order Submission',
       html: formatHeroFormDetailsToHTML(formDetails),
       attachments: attachments
     };
@@ -124,7 +124,7 @@ app.post('/submit-hero-form', upload.single('file'), (req, res) => {
         res.status(500).send('Error sending email');
       } else {
         console.log('Email sent:', info.response);
-        res.status(200).send('Form submitted successfully');
+        res.status(200).send('Order submitted successfully');
       }
     });
   } catch (err) {

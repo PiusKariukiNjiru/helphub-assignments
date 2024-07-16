@@ -71,8 +71,7 @@ function Hero() {
       <div className="hero-content">
         <h2>Assignment Help Service</h2>
         <p>
-          "Looking for premier assignment help? You've come to the right place! Subscribe to our newsletter for exclusive tips,
-          resources, and updates to excel in your academic journey."
+          Looking for premier assignment help? You've come to the right place!
         </p>
         <ul className="features">
           <li>✓ 7+ Years Of Experience in Academic Writing</li>

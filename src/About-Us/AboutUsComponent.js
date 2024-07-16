@@ -22,7 +22,7 @@ const AboutUsComponent = () => {
                 </div>
             </div>
             <div className="about-us-image">
-                <img src="/assets/images/logo.png" alt="HelpHub Assignments Logo" />
+                <img src="/images/logo.png" alt="HelpHub Assignments Logo" />
             </div>
         </div>
         </div>

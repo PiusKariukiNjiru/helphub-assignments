@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import AboutUsComponent from "./AboutUsComponent";
 import WhyChooseUs from "./WhyChooseUs";
 import SuccessComponent from "./SuccessComponent";
-import Testimonials from "../Testimonials";
-import Footer from "../Footer";
+import Testimonials from "../Testimonials/Testimonials";
+import Footer from "../Footer/Footer";
 
 function AboutUsMain() {
   useEffect(() => {

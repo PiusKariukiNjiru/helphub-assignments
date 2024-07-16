@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import AssignmentFreeServices from "./AssignmentFreeServices";
+import AssignmentFreeServices from "../AssignmentFreeServices/AssignmentFreeServices";
 
 function FreeServicesMain() {
   useEffect(() => {

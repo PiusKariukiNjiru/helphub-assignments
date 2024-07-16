@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './OurFreeServices.css';
-import Button from './Button';
+import Button from '../Button/Button';
 
 const OurFreeServices = () => {
   const navigate = useNavigate();
