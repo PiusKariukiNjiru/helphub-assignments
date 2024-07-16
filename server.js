@@ -29,7 +29,7 @@ const transporter = nodemailer.createTransport({
 
 // Helper function to format order details into HTML
 const formatOrderDetailsToHTML = (orderDetails) => {
-  const files = orderDetails.files && orderDetails.files.length > 0 ? orderDetails.files.join(', ') : 'No files attached';
+  const files = orderDetails.files && orderDetails.files.length > 0 ? orderDetails.files.join(', ') : '';
   return `
     <h1>New Order Received</h1>
     <p><strong>Email:</strong> ${orderDetails.email}</p>
@@ -83,6 +83,9 @@ app.post('/submit-order', upload.array('files'), (req, res) => {
   }
 });
 
+
+
+
 // Helper function to format contact us details into HTML
 const formatContactUsDetailsToHTML = (contactDetails) => {
   return `
@@ -93,6 +96,10 @@ const formatContactUsDetailsToHTML = (contactDetails) => {
     <p><strong>Message:</strong> ${contactDetails.message}</p>
   `;
 };
+
+
+
+
 
 // API Route to handle contact form submission
 app.post('/send-message', (req, res) => {
@@ -124,7 +131,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
