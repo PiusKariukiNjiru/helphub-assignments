@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import './ProfessionalExperts.css';
 
 function ProfessionalExperts() {
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -17,16 +19,17 @@ function ProfessionalExperts() {
       threshold: 0.1
     });
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const sectionRefCopy = sectionRef.current;
+    if (sectionRefCopy) observer.observe(sectionRefCopy);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRefCopy) observer.unobserve(sectionRefCopy);
     };
   }, []);
+
+  const handleOrderNow = () => {
+    navigate('/order-now');
+  };
 
   return (
     <section className="professional-experts" ref={sectionRef}>
@@ -42,7 +45,7 @@ function ProfessionalExperts() {
           Our experts come from diverse backgrounds, enabling us to cater to a wide range of subjects and topics. With this stringent hiring process, we guarantee that our clients receive the best possible assistance, and their academic needs are met with precision and professionalism. Rest assured, when you seek assignment writing help from HelpHub Assignments, you'll be working with qualified and committed Professional Experts, making your academic journey a smooth and successful one.
         </p>
       </div>
-      <Button onClick={() => console.log('Hire an Expert clicked')}>
+      <Button onClick={handleOrderNow}>
         Hire an Expert
       </Button>
     </section>

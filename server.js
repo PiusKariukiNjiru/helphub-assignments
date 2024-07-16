@@ -46,6 +46,19 @@ const formatOrderDetailsToHTML = (orderDetails) => {
   `;
 };
 
+// Helper function to format Hero form details into HTML
+const formatHeroFormDetailsToHTML = (formDetails) => {
+  return `
+    <h1>New Hero Form Submission</h1>
+    <p><strong>Service:</strong> ${formDetails.service}</p>
+    <p><strong>Full Name:</strong> ${formDetails.fullName}</p>
+    <p><strong>Email:</strong> ${formDetails.email}</p>
+    <p><strong>Phone Number:</strong> ${formDetails.phoneNumber}</p>
+    <p><strong>Subject/Course Code:</strong> ${formDetails.subject}</p>
+    <p><strong>Assignment Description:</strong> ${formDetails.description}</p>
+  `;
+};
+
 // API Route to handle order form submission
 app.post('/submit-order', upload.array('files'), (req, res) => {
   try {
@@ -83,8 +96,42 @@ app.post('/submit-order', upload.array('files'), (req, res) => {
   }
 });
 
+// API Route to handle Hero form submission
+app.post('/submit-hero-form', upload.single('file'), (req, res) => {
+  try {
+    console.log('Hero form details received:', req.body);
+    const formDetails = req.body;
+    const file = req.file;
 
+    console.log('File received:', file);
 
+    const attachments = file ? [{
+      filename: file.originalname,
+      content: file.buffer
+    }] : [];
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: 'New Hero Form Submission',
+      html: formatHeroFormDetailsToHTML(formDetails),
+      attachments: attachments
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+        res.status(500).send('Error sending email');
+      } else {
+        console.log('Email sent:', info.response);
+        res.status(200).send('Form submitted successfully');
+      }
+    });
+  } catch (err) {
+    console.error('Error processing form:', err);
+    res.status(500).send('Error processing form');
+  }
+});
 
 // Helper function to format contact us details into HTML
 const formatContactUsDetailsToHTML = (contactDetails) => {
@@ -96,10 +143,6 @@ const formatContactUsDetailsToHTML = (contactDetails) => {
     <p><strong>Message:</strong> ${contactDetails.message}</p>
   `;
 };
-
-
-
-
 
 // API Route to handle contact form submission
 app.post('/send-message', (req, res) => {

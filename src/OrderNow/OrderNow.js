@@ -42,7 +42,6 @@ function OrderNow() {
   const [topic, setTopic] = useState("");
   const [detailedInstructions, setDetailedInstructions] = useState("");
   const [files, setFiles] = useState([]);
-  const [uploading, setUploading] = useState(false);
   const [email, setEmail] = useState(""); // new state for email
   const [error, setError] = useState("");
   const [daysLeft, setDaysLeft] = useState(0);
@@ -262,7 +261,6 @@ function OrderNow() {
               <button onClick={clearFiles}>Clear all</button>
             </div>
           )}
-          {uploading && <div className="spinner"></div>}
           {error && <p className="error">{error}</p>}
         </div>
         <div className="form-group">

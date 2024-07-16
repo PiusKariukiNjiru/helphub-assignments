@@ -39,14 +39,17 @@ const OurFreeServices = () => {
       threshold: 0.1
     });
 
-    if (titleRef.current) observer.observe(titleRef.current);
-    serviceCardRefs.current.forEach(card => {
+    const titleRefCopy = titleRef.current;
+    if (titleRefCopy) observer.observe(titleRefCopy);
+
+    const serviceCardRefsCopy = serviceCardRefs.current;
+    serviceCardRefsCopy.forEach(card => {
       if (card) observer.observe(card);
     });
 
     return () => {
-      if (titleRef.current) observer.unobserve(titleRef.current);
-      serviceCardRefs.current.forEach(card => {
+      if (titleRefCopy) observer.unobserve(titleRefCopy);
+      serviceCardRefsCopy.forEach(card => {
         if (card) observer.unobserve(card);
       });
     };
