@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import './Testimonials.css';
-
 const testimonials = [
   {
     id: 1,
     text: "I am extremely grateful for the exceptional services provided by the Assignment Writing Services company. Their team of talented writers not only delivered my assignments on time but also ensured that the content was of the highest quality.",
     name: "John Doe",
     role: "Student",
-    img: "/images/pius.JPEG"
+    img: 'images/turnitin-report1.png'
   },
   {
     id: 2,
