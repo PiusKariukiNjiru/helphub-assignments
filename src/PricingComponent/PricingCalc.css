@@ -6,6 +6,7 @@
     background-color: #f4f5f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
   }
   
   .pricing-grid {
@@ -31,7 +32,7 @@
   }
   
   select, .counter {
-    width: 100%;
+    width: 70%;
     padding: 8px 12px;
     border: 1px solid #ced4da;
     border-radius: 4px;

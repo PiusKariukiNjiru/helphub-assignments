@@ -28,7 +28,7 @@ function ProfessionalExperts() {
   }, []);
 
   const handleOrderNow = () => {
-    navigate('/order-now');
+    navigate('/order-now-main');
   };
 
   return (

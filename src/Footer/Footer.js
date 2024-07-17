@@ -15,7 +15,7 @@ const Footer = () => {
           <Link to="/services">Services</Link>
           <Link to="/about">About Us</Link>
           <Link to="/contact">Contact Us</Link>
-          <Link to="/order-now" className="order-now">Order Now</Link>
+          <Link to="/order-now-main" className="order-now-main">Order Now</Link>
         </nav>
         
         <div className="social-icons">

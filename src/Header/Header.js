@@ -21,7 +21,7 @@ function Header() {
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
         <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>Pricing</Link>
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
-        <Link to="/order-now" className={`order-now ${location.pathname === '/order-now' ? 'active' : ''}`}>Order Now</Link>
+        <Link to="/order-now-main" className={`order-now ${location.pathname === '/order-now-main' ? 'active' : ''}`}>Order Now</Link>
       </nav>
     </header>
   );

@@ -10,6 +10,7 @@ import ContactUs from './ContactUs/ContactUs'
 import OrderNow from './OrderNow/OrderNow';
 import Footer from './Footer/Footer';
 import PricingMain from './PricingComponent/PricingMain';
+import OrderNowMain from './OrderComponents/OrderNowMain';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
           <Route path="/contact" element={<ContactUs/>} />
           <Route path="/order-now" element={<OrderNow />} />
           <Route path="/pricing" element={<PricingMain />} />
+          <Route path="/order-now-main" element={<OrderNowMain />} />
+
 
 
         </Routes>
