@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import Testimonials from '../Testimonials/Testimonials';
 import Assignments from './Assignments';
 import HeroSection from './HeroSection';
-import Footer from '../Footer/Footer';
+
 
 const services = [
   {
@@ -67,7 +67,7 @@ const Services = () => {
       </div>
       <Assignments />
       <Testimonials />
-      <Footer />
+      
     </>
   );
 };

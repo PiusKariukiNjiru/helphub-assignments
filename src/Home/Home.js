@@ -5,7 +5,6 @@ import OurFreeServices from '../OurFreeServices/OurFreeServices';
 import ProfessionalExperts from '../ProfessionalExperts/ProfessionalExperts';
 import ExcellentServices from '../ExcellentServices/ExcellentServices';
 import Testimonials from '../Testimonials/Testimonials';
-import Footer from '../Footer/Footer';
 
 function App() {
  
@@ -17,7 +16,8 @@ function App() {
       <ProfessionalExperts />
       <ExcellentServices />
       <Testimonials />
-      <Footer />
+      
+      
     </div>
   );
 }

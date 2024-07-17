@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../Footer/Footer';
+
 import './OrderNow.css';
 
 const subjects = [
@@ -15,7 +15,7 @@ const subjects = [
   "Tourism"
 ];
 
-const formattingStyles = ["APA 6", "APA 7", "MLA", "Chicago/Turabian", "Harvard", "IEEE", "Other"];
+const formattingStyles = ["APA 7", "APA 6", "MLA", "Chicago/Turabian", "Harvard", "IEEE", "Other"];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const VALID_FILE_TYPES = [
   'application/pdf', 
@@ -178,6 +178,20 @@ function OrderNow() {
             >
               Editing
             </button>
+
+            <button 
+              className={`order-type-btn ${orderType === "Rewriting" ? "active" : ""}`} 
+              onClick={() => setOrderType("Rewriting")}
+            >
+              Rewriting
+            </button>
+
+            <button 
+              className={`order-type-btn ${orderType === "Proofreading" ? "active" : ""}`} 
+              onClick={() => setOrderType("Proofreading")}
+            >
+              Proofreading
+            </button>
           </div>
         </div>
         <div className="form-group">
@@ -268,7 +282,7 @@ function OrderNow() {
         </div>
         {submissionStatus && <p className="submission-status">{submissionStatus}</p>}
       </div>
-      <Footer />
+      
     </>
   );
 }

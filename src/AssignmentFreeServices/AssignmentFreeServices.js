@@ -2,7 +2,7 @@ import React from 'react';
 import './AssignmentFreeServices.css';
 import Button from '../Button/Button';
 import Testimonials from '../Testimonials/Testimonials';
-import Footer from '../Footer/Footer';
+
 
 
 
@@ -20,7 +20,7 @@ const services = [
 
     
   {
-    
+
     id: 2,
     image: 'images/resources.jpeg',
     alt: 'Resources for any Assignment',
@@ -76,7 +76,7 @@ const AssignmentFreeServices = () => {
       ))}
     </div>
     <Testimonials />
-    <Footer />
+    
 
     </>
   );

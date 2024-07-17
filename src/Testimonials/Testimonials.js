@@ -4,60 +4,47 @@ import './Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    text: "I am extremely grateful for the exceptional services provided by the Assignment Writing Services company. Their team of talented writers not only delivered my assignments on time but also ensured that the content was of the highest quality.",
-    name: "John Doe",
-    role: "Student",
-    img: 'images/turnitin-report1.png'
+    text: "I always struggle with academic writing which is why my friend recommended me this service. To say I am pleasantly surprised is an understatement. It is an excellent service with exceptional writers.",
+    name: "Megan Austin",
+    role: "Newcastle, UK",
+    img: 'images/testimony3.jpg'
   },
   {
     id: 2,
     text: "I am filled with gratitude as I reflect on my academic journey, with the HelpHub Assignments as my guiding light. I know it might sound poetic but their unwavering support and exceptional assistance have played an important role in achieving good grades.",
-    name: "Angel Williams",
-    role: "Student",
-    img: "/images/mercy.JPEG"
+    name: "Kieran Williams",
+    role: "California, USA",
+    img: "/images/testimony1.png"
   },
   {
     id: 3,
-    text: "I am extremely grateful for the exceptional services provided by the Assignment Writing Services company. Their team of talented writers not only delivered my assignments on time but also ensured that the content was of the highest quality.",
-    name: "Cate Doe",
-    role: "Student",
-    img: "/images/mercy.JPEG"
+    text: "I am extremely grateful for the exceptional services provided by the HelpHub Assignments. Their team of talented writers not only delivered my assignments on time but also ensured that the content was of the highest quality.",
+    name: "Cate Lloyed",
+    role: "London, UK",
+    img: "/images/testimony2.png"
   },
   {
     id: 4,
-    text: "I am filled with gratitude as I reflect on my academic journey, with the HelpHub Assignments as my guiding light. I know it might sound poetic but their unwavering support and exceptional assistance have played an important role in achieving good grades.",
-    name: "Jane Williams",
-    role: "Student",
-    img: "/images/pius.JPEG"
+    text: "Thanks for delivering a well-drafted document on a complicated topic. I was able to submit an excellent sociology assignment and got appreciation from my professor. Thanks a lot to the entire team! You guys whom I can trust for my assignments.",    
+    name: "Amelie Mclean",
+    role: "Newcastle, UK",
+    img: "/images/testimony4.png"
   },
   {
     id: 5,
-    text: "I am extremely grateful for the exceptional services provided by the Assignment Writing Services company. Their team of talented writers not only delivered my assignments on time but also ensured that the content was of the highest quality.",
-    name: "Rufus Doe",
-    role: "Student",
-    img: "/images/pius.JPEG"
+    text: "I never received an A+ grade for my project since I am weak at collecting details effectively. But after contacting the team of HelpHub Assgnments, my dream became a reality, and I ranked first in project work. Thanks to you.",
+    name: "Poppy Chamberlain",
+    role: "London, UK",
+    img: "/images/testimony5.png"
   },
   {
     id: 6,
-    text: "I am filled with gratitude as I reflect on my academic journey, with the HelpHub Assignments as my guiding light. I know it might sound poetic but their unwavering support and exceptional assistance have played an important role in achieving good grades.",
-    name: "Clinton Williams",
-    role: "Student",
-    img: "/images/mercy.JPEG"
+    text: "I have had a fantastic experience with pro-academic-writer.com. I have ordered papers from their website for nine months now and I am always more than satisfied with the quality of their products. They do a thorough research and collect a lot of information to look at the topic from different angles. Thank you!",
+    name: "Mariah Kimberly",
+    role: "Columbus, USA",
+    img: "/images/testimony6.png"
   },
-  {
-    id: 7,
-    text: "I am filled with gratitude as I reflect on my academic journey, with the HelpHub Assignments as my guiding light. I know it might sound poetic but their unwavering support and exceptional assistance have played an important role in achieving good grades.",
-    name: "Mercy Williams",
-    role: "Student",
-    img: "/images/mercy.JPEG"
-  },
-  {
-    id: 8,
-    text: "I am filled with gratitude as I reflect on my academic journey, with the HelpHub Assignments as my guiding light. I know it might sound poetic but their unwavering support and exceptional assistance have played an important role in achieving good grades.",
-    name: "Pius Williams",
-    role: "Student",
-    img: "/images/pius.JPEG"
-  }
+  
 ];
 
 const TestimonialsCarousel = () => {

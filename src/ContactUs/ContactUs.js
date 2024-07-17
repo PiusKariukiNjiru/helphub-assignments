@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './ContactUs.css';
-import Footer from '../Footer/Footer';
 import Testimonials from '../Testimonials/Testimonials';
 
 const ContactUs = () => {
@@ -120,7 +119,7 @@ const ContactUs = () => {
         </div>
       </div>
       <Testimonials />
-      <Footer />
+      
     </>
   );
 };
