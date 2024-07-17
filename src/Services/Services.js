@@ -42,7 +42,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   const handleOrderNow = () => {
-    navigate('/order-now');
+    navigate('/order-now-main');
   };
 
   return (

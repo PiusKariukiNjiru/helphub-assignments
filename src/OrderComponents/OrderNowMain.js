@@ -113,8 +113,12 @@ const OrderNow = () => {
 
   return (
     <form onSubmit={handleSubmit} className="order-form">
+       
       {step === 1 && (
         <div className="form-step">
+          <div>
+            <h2>Step 1</h2>
+          </div> 
           <EmailInput email={email} setEmail={setEmail} />
           {errors.email && <p className="error">{errors.email}</p>}
           <OrderTypeSelector orderType={orderType} setOrderType={setOrderType} />
@@ -129,6 +133,9 @@ const OrderNow = () => {
       )}
       {step === 2 && (
         <div className="form-step">
+          <div>
+            <h2>Step 2</h2>
+          </div>
           <FormattingStyleSelector
             formattingStyle={formattingStyle}
             setFormattingStyle={setFormattingStyle}
@@ -148,6 +155,9 @@ const OrderNow = () => {
       )}
       {step === 3 && (
         <div className="form-step">
+          <div>
+            <h2>Step 3</h2>
+          </div> 
           <ResourceCounter resources={resources} setResources={setResources} />
           <InstructionsTextarea instructions={instructions} setInstructions={setInstructions} />
           <FileUploader files={files} setFiles={setFiles} />
@@ -161,6 +171,9 @@ const OrderNow = () => {
       )}
       {step === 4 && (
         <div className="form-step">
+          <div>
+            <h2>Step 4</h2>
+          </div>  
           <div className="form-summary">
             <h3>Review Your Order</h3>
             <h5>Email: {email}</h5>
