@@ -6,11 +6,11 @@ import Home from './Home/Home';
 import FreeServicesMain from './OurFreeServices/FreeServicesMain';
 import ServicesMain from './Services/ServicesMain';
 import AboutUsMain from './About-Us/AboutUsMain';
-import ContactUs from './ContactUs/ContactUs'
-
+import ContactUs from './ContactUs/ContactUs';
 import Footer from './Footer/Footer';
 import PricingMain from './PricingComponent/PricingMain';
 import OrderNowMain from './OrderComponents/OrderNowMain';
+import SamplePapers from './Samples/SamplePapers';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Route path="/services" element={<ServicesMain />} />
           <Route path="/about" element={<AboutUsMain/>} />
           <Route path="/contact" element={<ContactUs/>} />
-
+          <Route path="/samples" element={<SamplePapers/>} />
           <Route path="/pricing" element={<PricingMain />} />
           <Route path="/order-now-main" element={<OrderNowMain />} />
 

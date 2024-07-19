@@ -42,10 +42,6 @@ const OrderNow = () => {
   }, step);
 
   const handleNextStep = () => {
-    console.log("Current Step:", step);
-    console.log("Current Form State:", { email, orderType, level, deadline, pages, resources, formattingStyle, otherFormattingStyle, subject, topic, instructions, files, price });
-    console.log("Errors:", errors);
-
     if (Object.keys(errors).length > 0) {
       setSubmitMessage('Please fix the errors before proceeding.');
       return;
@@ -113,19 +109,16 @@ const OrderNow = () => {
 
   return (
     <form onSubmit={handleSubmit} className="order-form">
-       
       {step === 1 && (
         <div className="form-step">
           <div>
             <h2>Step 1</h2>
-          </div> 
-          <EmailInput email={email} setEmail={setEmail} />
-          {errors.email && <p className="error">{errors.email}</p>}
-          <OrderTypeSelector orderType={orderType} setOrderType={setOrderType} />
-          <AcademicLevelSelector level={level} setLevel={setLevel} />
-          <PageCounter pages={pages} setPages={setPages} />
-          {errors.pages && <p className="error">{errors.pages}</p>}
-          <DeadlineDisplay deadline={deadline} setDeadline={setDeadline} />
+          </div>
+          <EmailInput email={email} setEmail={setEmail} error={errors.email} />
+          <OrderTypeSelector orderType={orderType} setOrderType={setOrderType} error={errors.orderType} />
+          <AcademicLevelSelector level={level} setLevel={setLevel} error={errors.level} />
+          <PageCounter pages={pages} setPages={setPages} error={errors.pages} />
+          <DeadlineDisplay deadline={deadline} setDeadline={setDeadline} error={errors.deadline} />
           <button type="button" onClick={handleNextStep} className="next-button">
             Next
           </button>
@@ -142,8 +135,7 @@ const OrderNow = () => {
             otherFormattingStyle={otherFormattingStyle}
             setOtherFormattingStyle={setOtherFormattingStyle}
           />
-          <SubjectSelector subject={subject} setSubject={setSubject} />
-          {errors.subject && <p className="error">{errors.subject}</p>}
+          <SubjectSelector subject={subject} setSubject={setSubject} error={errors.subject} />
           <TopicInput topic={topic} setTopic={setTopic} />
           <div className="step-buttons">
             <button type="button" onClick={handlePrevStep} className="prev-button">Back</button>
@@ -157,7 +149,7 @@ const OrderNow = () => {
         <div className="form-step">
           <div>
             <h2>Step 3</h2>
-          </div> 
+          </div>
           <ResourceCounter resources={resources} setResources={setResources} />
           <InstructionsTextarea instructions={instructions} setInstructions={setInstructions} />
           <FileUploader files={files} setFiles={setFiles} />
@@ -173,7 +165,7 @@ const OrderNow = () => {
         <div className="form-step">
           <div>
             <h2>Step 4</h2>
-          </div>  
+          </div>
           <div className="form-summary">
             <h3>Review Your Order</h3>
             <h5>Email: {email}</h5>

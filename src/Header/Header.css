@@ -18,15 +18,16 @@
   border-radius: 50%;
 }
 
-.App-header h1 {
+.App-header p {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: 'Lucida Sans', sans-serif;
+  font-weight: 800;
 }
 
 .App-header nav {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -91,5 +92,13 @@
 
   .App-header nav.open {
     display: flex;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .App-header h1{
+    font-size: 1.0em;
+
   }
 }

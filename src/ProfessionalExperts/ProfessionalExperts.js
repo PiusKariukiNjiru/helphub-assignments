@@ -46,7 +46,7 @@ function ProfessionalExperts() {
         </p>
       </div>
       <Button onClick={handleOrderNow}>
-        Read More
+        Hire an Expert
       </Button>
     </section>
   );

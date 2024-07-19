@@ -9,8 +9,13 @@ function Header() {
   return (
     <header className="App-header">
       <div className="logo">
-        <img src="images/logo.png" alt="Crown Logo" />
-        <h1>HelpHub Assignments</h1>
+          <div>
+              <img src="images/logo.png" alt="Crown Logo" />
+          </div>
+          <div>
+              <p>HelpHub</p>
+              <p>Assignments</p>
+          </div>
       </div>
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
@@ -21,6 +26,7 @@ function Header() {
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
         <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>Pricing</Link>
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
+        <Link to="/samples" className={location.pathname === '/samples' ? 'active' : ''}>Samples</Link>
         <Link to="/order-now-main" className={`order-now ${location.pathname === '/order-now-main' ? 'active' : ''}`}>Order Now</Link>
       </nav>
     </header>

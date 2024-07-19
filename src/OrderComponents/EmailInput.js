@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './EmailInput.css';
 
-const EmailInput = ({ email, setEmail }) => {
+const EmailInput = ({ email, setEmail, error }) => {
   const [touched, setTouched] = useState(false);
 
   const handleEmailChange = (e) => {
@@ -22,7 +22,8 @@ const EmailInput = ({ email, setEmail }) => {
           placeholder="Enter your email"
           onChange={handleEmailChange}
           aria-describedby="emailHelp"
-          aria-invalid={touched && !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)}
+          aria-invalid={touched && !!error}
+          onBlur={() => setTouched(true)}
         />
         <span className="tooltip">
           ?
@@ -31,8 +32,8 @@ const EmailInput = ({ email, setEmail }) => {
           </span>
         </span>
       </div>
-      {touched && email && !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) && (
-        <small id="emailHelp" style={{ color: 'red' }}></small>
+      {touched && error && (
+        <small id="emailHelp" style={{ color: 'red' }}>{error}</small>
       )}
     </div>
   );

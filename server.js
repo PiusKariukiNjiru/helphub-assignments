@@ -34,7 +34,7 @@ const formatOrderDetailsToHTML = (orderDetails) => {
     <p><strong>Email:</strong> ${orderDetails.email}</p>
     <p><strong>Order Type:</strong> ${orderDetails.orderType}</p>
     <p><strong>Academic Level:</strong> ${orderDetails.level}</p>
-    <p><strong>Deadline:</strong> ${orderDetails.deadline}</p>
+    <p><strong>Deadline:</strong> ${orderDetails.timeleft}</p>
     <p><strong>Pages:</strong> ${orderDetails.pages}</p>
     <p><strong>Number of Cited Resources:</strong> ${orderDetails.resources}</p>
     <p><strong>Formatting Style:</strong> ${orderDetails.formattingStyle} ${orderDetails.otherFormattingStyle ? `(${orderDetails.otherFormattingStyle})` : ''}</p>
