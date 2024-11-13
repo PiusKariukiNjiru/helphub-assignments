@@ -16,6 +16,11 @@ import SubmitButton from './SubmitButton';
 import './OrderNow.css';
 
 const OrderNow = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    }, []);
+
   const {
     email, setEmail,
     orderType, setOrderType,
@@ -43,8 +48,10 @@ const OrderNow = () => {
 
   const handleNextStep = () => {
     if (Object.keys(errors).length > 0) {
-      setSubmitMessage('Please fix the errors before proceeding.');
-      return;
+        setSubmitMessage(
+            <span style={{ color: 'red' }}>Please fix the errors before proceeding.</span>
+        );
+        return;
     }
     setSubmitMessage('');
     setStep(step + 1);
@@ -58,7 +65,7 @@ const OrderNow = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (Object.keys(errors).length > 0) {
-      setSubmitMessage('Please fix the errors before submitting.');
+      setSubmitMessage( <span style={{ color: 'red' }}>Please fix the errors before proceeding.</span>);
       return;
     }
     setIsSubmitting(true);
@@ -99,6 +106,7 @@ const OrderNow = () => {
     }
 
     setIsSubmitting(false);
+    
   };
 
   const formatDeadline = (deadline) => {

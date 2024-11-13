@@ -28,7 +28,7 @@ const PricingCalc = () => {
   const isDisabled = useMemo(() => pages < 1 || pages > 100, [pages]);
 
   const handleOrderNowClick = () => {
-    navigate('/order-now-main');
+    navigate('/order-display');
   };
 
   return (

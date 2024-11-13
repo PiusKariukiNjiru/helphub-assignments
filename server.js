@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build'))); // Serve static files from the 'build' folder
 
 // Multer setup for file uploads
 const storage = multer.memoryStorage();
@@ -34,7 +34,7 @@ const formatOrderDetailsToHTML = (orderDetails) => {
     <p><strong>Email:</strong> ${orderDetails.email}</p>
     <p><strong>Order Type:</strong> ${orderDetails.orderType}</p>
     <p><strong>Academic Level:</strong> ${orderDetails.level}</p>
-    <p><strong>Deadline:</strong> ${orderDetails.timeleft}</p>
+    <p><strong>Deadline:</strong> ${orderDetails.deadline}</p>
     <p><strong>Pages:</strong> ${orderDetails.pages}</p>
     <p><strong>Number of Cited Resources:</strong> ${orderDetails.resources}</p>
     <p><strong>Formatting Style:</strong> ${orderDetails.formattingStyle} ${orderDetails.otherFormattingStyle ? `(${orderDetails.otherFormattingStyle})` : ''}</p>
@@ -51,8 +51,6 @@ app.post('/submit-order', upload.array('files'), (req, res) => {
     console.log('Order details received:', req.body);
     const orderDetails = req.body;
     const files = req.files;
-
-    console.log('Files received:', files);
 
     const attachments = files ? files.map(file => ({
       filename: file.originalname,
@@ -82,8 +80,6 @@ app.post('/submit-order', upload.array('files'), (req, res) => {
   }
 });
 
-
-
 // Helper function to format Hero form details into HTML
 const formatHeroFormDetailsToHTML = (formDetails) => {
   return `
@@ -97,15 +93,12 @@ const formatHeroFormDetailsToHTML = (formDetails) => {
   `;
 };
 
-
 // API Route to handle Hero form submission
 app.post('/submit-hero-form', upload.single('file'), (req, res) => {
   try {
     console.log('Hero form details received:', req.body);
     const formDetails = req.body;
     const file = req.file;
-
-    console.log('File received:', file);
 
     const attachments = file ? [{
       filename: file.originalname,
@@ -158,8 +151,6 @@ app.post('/send-message', (req, res) => {
     html: formatContactUsDetailsToHTML({ fullName, email, phone, message })
   };
 
-  console.log('Attempting to send email with options:', mailOptions);
-
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error('Error sending email:', error);
@@ -171,13 +162,12 @@ app.post('/send-message', (req, res) => {
   });
 });
 
-
-
 // Catch-all handler for any requests that don't match the ones above
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+// Set the port for the server to listen on
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

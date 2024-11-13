@@ -11,17 +11,15 @@ const SubjectSelector = ({ subject, setSubject, error }) => {
   };
 
   const subjects = [
-    "Select the Subject", "Business and Entrepreneurship", "English", "History", "Nursing", "Accounting",
-    "African-American Studies", "Anthropology", "Architecture", "Art, Theatre and Film",
-    "Biology", "Calculus", "Chemistry", "Communication Strategies", "Computer Science",
-    "Coursework", "Criminology", "Economics", "Education", "Environmental Issues",
-    "Ethics", "Finance", "Geography", "Healthcare", "International and Public Relations",
-    "Law and Legal Issues", "Linguistics", "Literature", "Macroeconomics", "Management",
-    "Marketing", "Mathematics", "Microeconomics", "Music", "Nutrition", "Other",
-    "Philosophy", "Physics", "Political Science", "Presentation/Powerpoint", "Psychology",
-    "Religion and Theology", "Science", "Sociology", "Sport", "Statistics", "Technology",
-    "Tourism"
-  ];
+    "Select the Subject", "Accounting", "African-American Studies", "Anthropology", "Architecture", "Art, Theatre and Film",
+    "Biology", "Business and Entrepreneurship", "Calculus", "Chemistry", "Communication Strategies",
+    "Computer Science", "Coursework", "Criminology", "Economics", "Education", "English",
+    "Environmental Issues", "Ethics", "Finance", "Geography", "Healthcare", "History",
+    "International and Public Relations", "Law and Legal Issues", "Linguistics", "Literature",
+    "Macroeconomics", "Management", "Marketing", "Mathematics", "Microeconomics", "Music",
+    "Nutrition", "Other", "Philosophy", "Physics", "Political Science", "Presentation/Powerpoint",
+    "Programming", "Psychology", "Religion and Theology", "Science", "Sociology", "Sport", "Statistics", "Technology", "Tourism"
+];
 
   return (
     <div className="field">

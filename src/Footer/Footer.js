@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faYoutube, faTwitter, faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faYoutube,faXTwitter, faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
 
 const Footer = () => {
@@ -15,23 +15,21 @@ const Footer = () => {
           <Link to="/services">Services</Link>
           <Link to="/about">About Us</Link>
           <Link to="/contact">Contact Us</Link>
-          <Link to="/order-now-main" className="order-now-main">Order Now</Link>
+          <Link to="/order-display" className="order-now-main">Order Now</Link>
         </nav>
         
         <div className="social-icons">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://www.facebook.com/payaz.kariuki" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <FontAwesomeIcon icon={faFacebookF} />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <FontAwesomeIcon icon={faYoutube} />
+          
+          <a href="https://x.com/helphub_assign?t=1-qzXUvoD7E2s8qL6ebqAQ&s=09" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <FontAwesomeIcon icon={faXTwitter} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <a href="https://www.tiktok.com/@helphub.assignments?_t=8oLljCzAoIX&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <FontAwesomeIcon icon={faTiktok} />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/helphub_assignments?igsh=YzljYTk1ODg3Zg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </div>

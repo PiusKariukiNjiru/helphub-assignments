@@ -10,7 +10,7 @@ function Header() {
     <header className="App-header">
       <div className="logo">
           <div>
-              <img src="images/logo.png" alt="Crown Logo" />
+              <img src="/logo.png" alt="Logo" />
           </div>
           <div>
               <p>HelpHub</p>
@@ -27,7 +27,8 @@ function Header() {
         <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>Pricing</Link>
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
         <Link to="/samples" className={location.pathname === '/samples' ? 'active' : ''}>Samples</Link>
-        <Link to="/order-now-main" className={`order-now ${location.pathname === '/order-now-main' ? 'active' : ''}`}>Order Now</Link>
+        <Link to="/blogs" className={location.pathname === '/blogs' ? 'active' : ''}>Blogs</Link>
+        <Link to="/order-display" className={`order-now ${location.pathname === '/order-display' ? 'active' : ''}`}>Order Now</Link>
       </nav>
     </header>
   );
