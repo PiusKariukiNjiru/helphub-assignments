@@ -16,7 +16,7 @@ const WhatsAppButton = () => {
   }, []);
 
   const handleClick = () => {
-    window.location.href = 'https://wa.me/254784996377?text=Hello%2C%20I%20need%20assistance%20with%20my%20order.'; // Customer support message
+    window.location.href = 'https://wa.me/254784996377?text=Hello%2C%20I%20need%20assistance%20with%20my%20assignment.'; // Customer support message
   };
 
   const buttonStyle = {
