@@ -21,13 +21,12 @@ function Header() {
         ☰
       </button>
       <nav className={menuOpen ? 'open' : ''}>
-        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Homes</Link>
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
         <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
         <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>Pricing</Link>
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
         <Link to="/samples" className={location.pathname === '/samples' ? 'active' : ''}>Samples</Link>
-        <Link to="/blogs" className={location.pathname === '/blogs' ? 'active' : ''}>Blogs</Link>
         <Link to="/order-display" className={`order-now ${location.pathname === '/order-display' ? 'active' : ''}`}>Order Now</Link>
       </nav>
     </header>
