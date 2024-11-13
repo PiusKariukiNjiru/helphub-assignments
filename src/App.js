@@ -10,8 +10,6 @@ import ContactUs from './ContactUs/ContactUs';
 import Footer from './Footer/Footer';
 import PricingMain from './PricingComponent/PricingMain';
 import SamplePapers from './Samples/SamplePapers';
-import BlogList from './Blogs/BlogList';
-import PostPage from './Blogs/PostPage';
 import OrderDisplay from './OrderComponents/OrderDisplay';
 import WhatsAppButton from './WhatsAppButton/WhatsAppButton';
 
@@ -32,8 +30,7 @@ function App() {
           <Route path="/samples" element={<SamplePapers/>} />
           <Route path="/pricing" element={<PricingMain />} />
           <Route path="/order-display" element={<OrderDisplay />} />
-          <Route path="/blogs" element={<BlogList />} />
-          <Route path="/post/:id" element={<PostPage />} />
+          
 
 
 
