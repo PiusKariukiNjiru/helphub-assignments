@@ -21,7 +21,7 @@ function Header() {
         ☰
       </button>
       <nav className={menuOpen ? 'open' : ''}>
-        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Homes</Link>
         <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
         <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>Pricing</Link>
